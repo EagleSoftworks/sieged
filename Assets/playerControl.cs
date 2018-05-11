@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerControl : MonoBehaviour {
 
     public Transform player;
-
+    
     private Vector3 playerHeading;
 
     [Range(5, 10)] public float moveSpeed;
@@ -46,6 +46,5 @@ public class playerControl : MonoBehaviour {
 	void Update () {
 
         player.transform.position += GetHeading();
-
     }
 }

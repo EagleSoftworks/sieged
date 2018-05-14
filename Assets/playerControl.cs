@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
 
     public Transform player;
     
@@ -23,11 +23,11 @@ public class playerControl : MonoBehaviour {
 
         if (Input.GetButton("up"))
         {
-            playerHeading += Vector3.forward;
+            playerHeading += Vector3.up;
         }
         if (Input.GetButton("down"))
         {
-            playerHeading += Vector3.back;
+            playerHeading += Vector3.down;
         }
         if (Input.GetButton("left"))
         {

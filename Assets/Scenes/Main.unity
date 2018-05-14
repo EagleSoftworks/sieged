@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395284047}
   - component: {fileID: 395284048}
+  - component: {fileID: 395284049}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -322,6 +323,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 395284047}
+  moveSpeed: 9.26
+--- !u!114 &395284049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395284046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675c3511ad23e654fbb3635be5eea129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 395284047}
+  prefab: []
 --- !u!1 &518070005
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +451,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 32.67
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

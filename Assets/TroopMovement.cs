@@ -7,7 +7,7 @@ public class TroopMovement : MonoBehaviour {
     public float speed;
     // Use this for initialization
     void Start () {
-        target = FindObjectOfType<playerControl>().transform;
+        target = FindObjectOfType<PlayerControl>().transform;
 	}
 	
 	// Update is called once per frame

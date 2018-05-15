@@ -4,7 +4,7 @@ using UnityEngine;
 
 /* unit control and movement */
 
-public class UnitManagement /* : MonoBehaviour ? */ {
+public class UnitManagement : MonoBehaviour {
 
     public class UnitMovement : MonoBehaviour {
 

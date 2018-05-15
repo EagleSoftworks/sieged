@@ -8,14 +8,15 @@ public class UnitManagement /* : MonoBehaviour ? */ {
 
     public class UnitMovement : MonoBehaviour {
 
-      public:
-        Transform target;
-        float speed;
+        private Transform target;
+        private float speed;
+/*
         // one time at object init
         void Start () {
-            target = FindObjectOfType<PlayerControl>().transform; // this appears to be a metaprogramming hack
+            //target = FindObjectOfType<PlayerControl>().transform; // this appears to be a metaprogramming hack
         }
 
+*/
         // every frame
         void Update () {
             float step = speed * Time.deltaTime;
@@ -30,9 +31,11 @@ public class UnitManagement /* : MonoBehaviour ? */ {
         // public Transform player; // ??
 
         // this object is never initialised
-        public Transform[] prefab; // ????
+        private Transform[] prefab; // ????
 
-        void Start () { }
+        void Start () {
+            // this.prefab = ??
+        }
         // each frame
         void Update () {
             bool shift_held = Input.GetKey(KeyCode.LeftShift);

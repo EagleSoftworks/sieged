@@ -7,9 +7,8 @@ using UnityEngine;
 */
 public class UnitCollection {
 
-private:
-  Vector<Unit> units;
-  Dictionary<string, Vector<Unit>> unit_groups;
+  private List<Unit> units;
+  private Dictionary<string, List<Unit>> unit_groups;
 
   public void Start () {}
   public void Update () {}

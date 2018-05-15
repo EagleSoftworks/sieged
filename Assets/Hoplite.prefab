@@ -18,15 +18,9 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/Placeholder.prefab
-  - component: {fileID: 4918478727535432}
-  - component: {fileID: 212965453830865472}
-  - component: {fileID: 61707298439256762}
-=======
   - component: {fileID: 4854795361361174}
-  - component: {fileID: 212398498983548626}
   - component: {fileID: 58460716520458382}
->>>>>>> 540be3571fb3c82a8b46fd0b26200cebd3cc0f7b:Assets/Hoplite.prefab
+  - component: {fileID: 212965453830865472}
   m_Layer: 0
   m_Name: Hoplite
   m_TagString: Untagged
@@ -60,21 +54,11 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 2, y: 2}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!212 &212965453830865472
 SpriteRenderer:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1213625752835592}

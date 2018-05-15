@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class User : MonoBehaviour {
     private Player player;
 

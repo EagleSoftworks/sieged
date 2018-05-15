@@ -287,9 +287,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 395284047}
-  - component: {fileID: 395284048}
-  - component: {fileID: 395284049}
   - component: {fileID: 395284050}
+  - component: {fileID: 395284049}
+  - component: {fileID: 395284048}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -320,11 +320,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 395284046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3f9d1ac290c814f886891551a37abf, type: 3}
+  m_Script: {fileID: 11500000, guid: 99c5e6b3c18de4b5c9a988bbd9c4fc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 395284047}
-  moveSpeed: 9.26
 --- !u!114 &395284049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,13 +331,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 395284046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675c3511ad23e654fbb3635be5eea129, type: 3}
+  m_Script: {fileID: 11500000, guid: b0e83600123424dffaf52a68f954299e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 395284047}
-  prefab: []
---- !u!61 &395284050
-BoxCollider2D:
+--- !u!58 &395284050
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -351,18 +347,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!1 &518070005
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,20 +519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675c3511ad23e654fbb3635be5eea129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 395284047}
-  prefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &1285734377
 Transform:
   m_ObjectHideFlags: 0

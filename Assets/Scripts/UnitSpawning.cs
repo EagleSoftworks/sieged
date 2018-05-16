@@ -9,7 +9,7 @@ public class UnitSpawning : MonoBehaviour
     public Transform player; // ??
 
     // this object is never initialised
-    public Transform[] prefab; // ????
+    public GameObject[] prefab; // ????
 
     void Start()
     {
@@ -58,7 +58,10 @@ public class UnitSpawning : MonoBehaviour
         {
             if (Input.GetButtonDown(KeyCode.T.ToString()))
             {
-                Instantiate(prefab[0], new Vector3(2.0F, 0, 0), Quaternion.identity);
+                
+                GameObject peasant = Instantiate(prefab[0], transform.position, transform.rotation);
+
+                
             }
 
             if (Input.GetButtonDown(KeyCode.Y.ToString()))

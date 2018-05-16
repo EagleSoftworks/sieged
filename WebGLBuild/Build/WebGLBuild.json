@@ -5,7 +5,6 @@
 "asmCodeUrl": "WebGLBuild.asm.code.unityweb",
 "asmMemoryUrl": "WebGLBuild.asm.memory.unityweb",
 "asmFrameworkUrl": "WebGLBuild.asm.framework.unityweb",
-"asmLibraryUrl": "WebGLBuild.asm.library.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},

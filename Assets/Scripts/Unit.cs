@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    public int hp;
-    public int damage;
-    public int popCost;
-    public int goldCost;
-    public string level;
-    public string type;
+    int hp;
+    int damage;
+    int popCost;
+    int goldCost;
+    string level;
+    string type;
+    Sprite unitSprite;
 
-    public Unit(string type, string level, int goldCost, int popCost, int hp, int damage)
+    public Unit(Sprite unitSprite, string type, string level, int goldCost, int popCost, int hp, int damage)
     {
+        this.unitSprite = unitSprite;
         this.type = type;
         this.level = level;
         this.goldCost = goldCost;

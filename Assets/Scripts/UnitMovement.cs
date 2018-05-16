@@ -6,13 +6,8 @@ public class UnitMovement : MonoBehaviour {
 
     public Transform target;
     private float speed = 5;
-    /*
-            // one time at object init
-            void Start () {
-                //target = FindObjectOfType<PlayerControl>().transform; // this appears to be a metaprogramming hack
-            }
-
-    */
+    
+    
     // every frame
     void Update()
     {

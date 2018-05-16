@@ -190,11 +190,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1946869894326686, guid: 7336dad6a711ebf47aceecede9f8ac8b,
     type: 2}
   m_PrefabInternal: {fileID: 531019727}
---- !u!4 &66283237 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4273485585141618, guid: 7336dad6a711ebf47aceecede9f8ac8b,
-    type: 2}
-  m_PrefabInternal: {fileID: 531019727}
 --- !u!50 &66283241
 Rigidbody2D:
   serializedVersion: 4
@@ -320,7 +315,6 @@ GameObject:
   - component: {fileID: 395284050}
   - component: {fileID: 395284049}
   - component: {fileID: 395284048}
-  - component: {fileID: 395284051}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -382,20 +376,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &395284051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 395284046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2321aecbde6a0a8479f53a0465c8ad66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 395284047}
-  prefab:
-  - {fileID: 66283237}
 --- !u!1 &518070005
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +563,14 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 395284047}
+    - target: {fileID: 4273485585141618, guid: 7336dad6a711ebf47aceecede9f8ac8b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273485585141618, guid: 7336dad6a711ebf47aceecede9f8ac8b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7336dad6a711ebf47aceecede9f8ac8b, type: 2}
   m_IsPrefabAsset: 0
@@ -654,9 +642,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2321aecbde6a0a8479f53a0465c8ad66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 395284047}
-  prefab:
-  - {fileID: 66283237}
+  troops:
+  - {fileID: 66283236}
+  troopPlacement: []
+  spawnVectors:
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: -1, y: 1, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: -1, y: -1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: 1, y: -1, z: 0}
 --- !u!4 &1285734377
 Transform:
   m_ObjectHideFlags: 0

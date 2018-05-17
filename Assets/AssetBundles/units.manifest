@@ -1,0 +1,50 @@
+ManifestFileVersion: 0
+CRC: 645332426
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9b7bdaa9c14521de05bb76142109b566
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 636541d88d11580ce7d632925a832134
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3ba60e3366869bc4d9250bdd00d42597, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1c3f9d1ac290c814f886891551a37abf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 757845e71b4ab5f419d80b2335b6e884, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Sprites/hoplite.png
+- Assets/Sprites/PlayerObject.prefab
+- Assets/Prefabs/Peasant.prefab
+- Assets/Sprites/Swordsman.prefab
+- Assets/Prefabs/Swordsman.prefab
+- Assets/Prefabs/Hoplite.prefab
+- Assets/Sprites/peasant.png
+Dependencies: []

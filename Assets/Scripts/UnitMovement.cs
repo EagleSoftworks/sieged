@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class UnitMovement : MonoBehaviour {
 
-    public Transform target;
+    private Transform target;
     private float speed = 5;
     
+    void Start()
+    {
+        target = this.GetComponentInParent<Player>().transform;
+    }
     
     // every frame
     void Update()

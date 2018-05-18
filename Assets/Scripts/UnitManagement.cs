@@ -38,9 +38,9 @@ public class UnitManagement : MonoBehaviour {
         var swordsman = unitBundle.LoadAsset<GameObject>("Swordsman");
         swordsman.transform.localScale = new Vector3(7f, 7f, 0);
 
-        units.Add("peasant", Instantiate(peasant));
-        units.Add("hoplite", Instantiate(hoplite));
-        units.Add("swordsman", Instantiate(swordsman));
+        units.Add("peasant", peasant);
+        units.Add("hoplite", hoplite);
+        units.Add("swordsman", swordsman);
 
         unitBundle.Unload(false);
     }

@@ -67,3 +67,4 @@ public class Player : MonoBehaviour {
         return (moving.normalized / 10) * moveSpeed;
     }
 }
+//Emmett Sux

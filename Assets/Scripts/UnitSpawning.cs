@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class UnitSpawning : MonoBehaviour
@@ -7,10 +8,18 @@ public class UnitSpawning : MonoBehaviour
 
     // sub-objects should not care about owners
     public Transform holder;
+    public Transform grid;
 
     // this object is never initialised
     public Transform[] prefab; // ????
-    public Transform[] troopPoints; // ????
+    public List<Transform> troops;
+    public List<Transform> troopPoints; // ????
+
+    public GameObject trackingPoint;
+
+    private float lastAngle = 0f;
+    private Vector3 newTroopOffset;
+    private Vector3 newTroopPos;
 
     void Start()
     {
@@ -26,8 +35,10 @@ public class UnitSpawning : MonoBehaviour
         {
             if (Input.GetButtonDown(KeyCode.T.ToString()))
             {
-                Instantiate(prefab[6], transform.position, Quaternion.identity, holder);
-            }
+
+                Transform troop = Instantiate(prefab[6], transform.position, Quaternion.identity, holder);
+                troops.Add(troop);
+            }   
 
             if (Input.GetButtonDown(KeyCode.Y.ToString()))
             {
@@ -59,7 +70,13 @@ public class UnitSpawning : MonoBehaviour
         {
             if (Input.GetButtonDown(KeyCode.T.ToString()))
             {
-                Instantiate(prefab[0], transform.position, Quaternion.identity, holder);
+                GameObject point = Instantiate(trackingPoint, nexttroopPos(), Quaternion.identity, grid);
+                troopPoints.Add(point.transform);
+
+                Transform troop = Instantiate(prefab[0], transform.position, Quaternion.identity, holder);
+                troops.Add(troop);
+                
+                
             }
 
             if (Input.GetButtonDown(KeyCode.Y.ToString()))
@@ -70,7 +87,7 @@ public class UnitSpawning : MonoBehaviour
             if (Input.GetButtonDown(KeyCode.U.ToString()))
             {
                 Instantiate(prefab[2], transform.position, Quaternion.identity, holder);
-            }
+            }   
 
             if (Input.GetButtonDown(KeyCode.I.ToString()))
             {
@@ -87,5 +104,14 @@ public class UnitSpawning : MonoBehaviour
                 Instantiate(prefab[5], transform.position, Quaternion.identity, holder);
             }
         }
+    }
+
+    Vector3 nexttroopPos()
+    {
+        newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
+        newTroopPos = newTroopOffset + this.transform.position;
+        lastAngle += 15;
+        return newTroopPos;
+
     }
 }

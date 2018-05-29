@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 
     private UnitCollection all_units;    // unused currently
     private UnitManagement manage_units; // unused
+    private UnitSpawning spawn;
     private Guid uuid;
     private GameObject player;
 
@@ -24,46 +25,27 @@ public class Player : MonoBehaviour {
         this.manage_units = new UnitManagement();
     }
 
+
     public void Start()
     {
-        // Test Programmatically creating a player object
-        //player = new GameObject("Player");
-        //player.AddComponent<Transform>(); // use to give random spawn
-        //player.AddComponent<CircleCollider2D>();
-        //player.AddComponent<Player>(); //circular
+        spawn = GetComponentInChildren<UnitSpawning>();
     }
 
     public void Update () {
-        this.transform.position += getMoveInputs();
+        
     }
 
-    public Vector3 getMoveInputs()
+    private void FixedUpdate()
     {
-        // reset player direction
-        Vector3 moving = Vector3.zero;
+        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
 
-        if (Input.GetButton("up"))
-        {
-            Debug.Log("up");
-            moving += Vector3.up;
-        }
-        if (Input.GetButton("down"))
-        {
-            Debug.Log("down");
-            moving += Vector3.down;
-        }
-        if (Input.GetButton("left"))
-        {
-            Debug.Log("left");
-            moving += Vector3.left;
-        }
-        if (Input.GetButton("right"))
-        {
-            Debug.Log("right");
-            moving += Vector3.right;
-        }
+        //assign vertical input as a vector 2 value
+        Vector2 movement = new Vector2(horizontal, vertical);
 
-        // return player direction and speed
-        return (moving.normalized / 10) * moveSpeed;
+        GetComponent<Rigidbody2D>().AddForce(movement, ForceMode2D.Impulse);
     }
+
+
+
 }

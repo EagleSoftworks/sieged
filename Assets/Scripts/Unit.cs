@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Unit : MonoBehaviour {
 
-    int hp;
-    int damage;
-    int popCost;
-    int goldCost;
-    string level;
-    string type;
-    Sprite unitSprite;
-
-    public Unit(Sprite unitSprite, string type, string level, int goldCost, int popCost, int hp, int damage)
+    public int hp;
+    public int damage;
+    public int popCost;
+    public int goldCost;
+    int level;
+    int experience;
+    public string type;
+    
+    private void Start()
     {
-        this.unitSprite = unitSprite;
-        this.type = type;
-        this.level = level;
-        this.goldCost = goldCost;
-        this.popCost = popCost;
-        this.hp = hp;
-        this.damage = damage;
+        level = 1;
+        experience = 0;
     }
+
+    public void XPGain(int xp)
+    {
+        experience += xp;
+    }
+ 
  
 }
 

@@ -30,12 +30,15 @@ public class UnitManagement : MonoBehaviour {
         }
 
         var peasant = unitBundle.LoadAsset<GameObject>("Peasant");
+        peasant.name = "peasant";
         peasant.transform.localScale = new Vector3(5f, 5f, 0);
 
         var hoplite = unitBundle.LoadAsset<GameObject>("Hoplite");
+        hoplite.name = "hoplite";
         hoplite.transform.localScale = new Vector3(7f, 7f, 0);           
 
         var swordsman = unitBundle.LoadAsset<GameObject>("Swordsman");
+        swordsman.name = "swordsman";
         swordsman.transform.localScale = new Vector3(7f, 7f, 0);
 
         units.Add("peasant", peasant);

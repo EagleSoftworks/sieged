@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitSpawning : MonoBehaviour
 {
-    private List<Transform> troopPlacement;
+    private ArmyLayout armyLayout;
     private List<Vector3> spawnVectors = new List<Vector3>()
     {
         Vector3.right,
@@ -18,110 +18,63 @@ public class UnitSpawning : MonoBehaviour
     };
 
     private int spawnVectorIndex = 0;
-    private Transform nextPosition;
+    private Transform player;
+
+    void Start()
+    {
+        armyLayout = GetComponent<ArmyLayout>();
+        player = transform.parent.gameObject.GetComponentInChildren<Player>().transform;
+    }         
+
+    // each frame
+    void Update()
+    {
+        HandleInput();
+    }
+
+    private GameObject SpawnUnit(string unitName)
+    {
+        GameObject unit = Instantiate(UnitManagement.GetUnit(unitName),
+                                                   player.position,
+                                                   transform.rotation);
+        unit.transform.parent = transform;
+        unit.transform.position += NextSpawnVector();
+
+        return unit;
+    }
 
     public Vector3 NextSpawnVector()
     {
+        short spawnOffsetModifier = 4;
+
         if (spawnVectorIndex >= spawnVectors.Count)
         {
             spawnVectorIndex = 0;
         }
-        return spawnVectors[spawnVectorIndex++].normalized;
+        return spawnVectors[spawnVectorIndex++].normalized * spawnOffsetModifier;
     }
 
-    void Start()
+    private void HandleInput()
     {
-        nextPosition.position = Vector3.right;      
-    }
-    // each frame
-    void Update()
-    {
-        bool shift_held = Input.GetKey(KeyCode.LeftShift);
-
-        // shift modifier
-        if (shift_held)
+        if (Input.GetButtonDown("Swordsman"))
         {
-            if (Input.GetButtonDown(KeyCode.T.ToString()))
-            {
-                // Instantiate(troops[6], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.Y.ToString()))
-            {
-                // Instantiate(troops[7], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.U.ToString()))
-            {
-                // Instantiate(troops[8], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.I.ToString()))
-            {
-                // Instantiate(troops[9], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.O.ToString()))
-            {
-                //Instantiate(troops[10], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.P.ToString()))
-            {
-                //Instantiate(troops[11], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-        }
-        else // keys alone
+            GameObject unit = SpawnUnit("swordsman");
+            unit.name = "swordsman";
+            armyLayout.AddUnit(unit);
+        }      
+            
+        if (Input.GetButtonDown("Hoplite"))
         {
-            if (Input.GetButtonDown(KeyCode.T.ToString()))
-            {                   
-                GameObject swordsman = Instantiate(UnitManagement.GetUnit("swordsman"), 
-                                                   transform.position, 
-                                                   transform.rotation);
-
-                
-                swordsman.transform.parent = transform;
-                swordsman.transform.position += NextSpawnVector();                 
-                
-            }
-
-            if (Input.GetButtonDown(KeyCode.Y.ToString()))
-            {
-                GameObject hoplite = Instantiate(UnitManagement.GetUnit("hoplite"),
-                                                    transform.position,
-                                                    transform.rotation);
-
-                
-                hoplite.transform.parent = transform;
-                hoplite.transform.position += NextSpawnVector();
-            }
-
-            if (Input.GetButtonDown(KeyCode.U.ToString()))
-            {
-                GameObject peasant = Instantiate(UnitManagement.GetUnit("peasant"),
-                                                   transform.position,
-                                                   transform.rotation);
-
-                
-                peasant.transform.parent = transform;
-                peasant.transform.position += NextSpawnVector();
-            }
-
-            if (Input.GetButtonDown(KeyCode.I.ToString()))
-            {
-                //  Instantiate(troops[3], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.O.ToString()))
-            {
-                // Instantiate(troops[4], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
-
-            if (Input.GetButtonDown(KeyCode.P.ToString()))
-            {
-                // Instantiate(troops[5], new Vector3(2.0F, 0, 0), Quaternion.identity);
-            }
+            GameObject unit = SpawnUnit("hoplite");
+            unit.name = "hoplite";
+            armyLayout.AddUnit(unit);
         }
+
+        if (Input.GetButtonDown("Peasant"))
+        {
+            GameObject unit =  SpawnUnit("peasant");
+            unit.name = "peasant";
+            armyLayout.AddUnit(unit);
+        }           
     }
 }

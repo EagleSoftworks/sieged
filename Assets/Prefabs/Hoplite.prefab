@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 212878407841118334}
   - component: {fileID: 50550365063781278}
   - component: {fileID: 114040713669336668}
+  - component: {fileID: 114190284218140580}
   m_Layer: 0
   m_Name: Hoplite
   m_TagString: Untagged
@@ -52,16 +53,16 @@ Rigidbody2D:
   m_GameObject: {fileID: 1355816379581614}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &58206746171510558
 CircleCollider2D:
@@ -89,6 +90,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba60e3366869bc4d9250bdd00d42597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114190284218140580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355816379581614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ff21e541f314045af52c6c7a099d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  damage: 3
+  popCost: 2
+  goldCost: 50
+  type: Melee
 --- !u!212 &212878407841118334
 SpriteRenderer:
   m_ObjectHideFlags: 1

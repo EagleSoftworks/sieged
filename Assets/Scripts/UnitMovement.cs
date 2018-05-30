@@ -28,6 +28,7 @@ public class UnitMovement : MonoBehaviour {
     // every frame
     void Update()
     {
+        target = targetGrid[index].transform;
         float step = speed * Time.deltaTime;
         Debug.Log(target.transform.position);
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);

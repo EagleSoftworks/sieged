@@ -71,7 +71,7 @@ public class UnitSpawning : MonoBehaviour
             if (Input.GetButtonDown(KeyCode.T.ToString()))
             {
                 GameObject point = Instantiate(trackingPoint, nexttroopPos(), Quaternion.identity, grid);
-                troopPoints.Add(point.transform);
+                troopPoints.Insert(0, point.transform);
 
                 Transform troop = Instantiate(prefab[0], transform.position, Quaternion.identity, holder);
                 troops.Add(troop);
@@ -108,10 +108,45 @@ public class UnitSpawning : MonoBehaviour
 
     Vector3 nexttroopPos()
     {
-        newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
-        newTroopPos = newTroopOffset + this.transform.position;
-        lastAngle += 15;
-        return newTroopPos;
-
+        if (troops.Count > 59)
+        {
+            newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
+            newTroopOffset = newTroopOffset.normalized * (25f);
+            newTroopPos = newTroopOffset + this.transform.position;
+            lastAngle += 12;
+            return newTroopPos;
+        }
+        else if (troops.Count > 35)
+        {
+            newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
+            newTroopOffset = newTroopOffset.normalized * (20f);
+            newTroopPos = newTroopOffset + this.transform.position;
+            lastAngle += 15;
+            return newTroopPos;
+        }
+        else if (troops.Count > 17)
+        {
+            newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
+            newTroopOffset = newTroopOffset.normalized * (15f);
+            newTroopPos = newTroopOffset + this.transform.position;
+            lastAngle += 20;
+            return newTroopPos;
+        }
+        else if (troops.Count > 5)
+        {
+            newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
+            newTroopOffset = newTroopOffset.normalized * (10f);
+            newTroopPos = newTroopOffset + this.transform.position;
+            lastAngle += 30;
+            return newTroopPos;
+        }
+        else
+        {
+            newTroopOffset = new Vector3((Mathf.Cos(Convert.ToSingle(lastAngle * Math.PI / 180))), (Mathf.Sin(Convert.ToSingle(lastAngle * Math.PI / 180))), 0f);
+            newTroopOffset = newTroopOffset.normalized * (5f);
+            newTroopPos = newTroopOffset + this.transform.position;
+            lastAngle += 60;
+            return newTroopPos;
+        }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public string playerName;
+
     private UnitCollection all_units;    // unused currently
     private UnitManagement manage_units; // unused
     private Guid uuid;

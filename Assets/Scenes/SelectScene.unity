@@ -413,8 +413,9 @@ GameObject:
   - component: {fileID: 1097524866}
   - component: {fileID: 1097524865}
   - component: {fileID: 1097524864}
+  - component: {fileID: 1097524868}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,11 +451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b72eb3d18d92434f8799a698528f22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  play: {fileID: 1097524865}
-  color: 
-  selection: Main
-  isNull: {fileID: 1561247485}
-  isActive: {fileID: 1136609160}
 --- !u!114 &1097524865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +537,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097524862}
   m_CullTransparentMesh: 0
+--- !u!114 &1097524868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097524862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0866d041ff6a3f449a60ad3d0e82dac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  play: {fileID: 1097524865}
+  next: Main
+  isNull: {fileID: 1561247485}
+  isActive: {fileID: 1136609160}
 --- !u!1 &1136609160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,8 +1083,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e45db718e1bf2f4abb7d9ed52ec0766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userInput: {fileID: 1561247487}
-  Name: 
-  UIdisplay: {fileID: 1136609162}
-  printing: 
-  hopeThisWorks: {fileID: 360387670}

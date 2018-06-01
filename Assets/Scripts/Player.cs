@@ -47,12 +47,12 @@ public class Player : MonoBehaviour {
         if (Input.GetButton("up"))
         {
             Debug.Log("up");
-            moving += Vector3.up;
+            moving += Vector3.forward;
         }
         if (Input.GetButton("down"))
         {
             Debug.Log("down");
-            moving += Vector3.down;
+            moving += Vector3.back;
         }
         if (Input.GetButton("left"))
         {
@@ -69,4 +69,3 @@ public class Player : MonoBehaviour {
         return (moving.normalized / 10) * moveSpeed;
     }
 }
-//Emmett Sux

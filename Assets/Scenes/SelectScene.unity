@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 1561247488}
   - component: {fileID: 1561247487}
   - component: {fileID: 1561247490}
+  - component: {fileID: 1561247491}
   m_Layer: 0
   m_Name: InputField
   m_TagString: Untagged
@@ -1083,3 +1084,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e45db718e1bf2f4abb7d9ed52ec0766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1561247491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561247485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b62030a1fabfa40878836502a5a20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saved: {fileID: 360387670}
+  userInput: {fileID: 1561247487}
+  playerName: {fileID: 1136609162}

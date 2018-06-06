@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitMovement : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class UnitMovement : MonoBehaviour {
     // one time at object init
     void Start () {
         this.transform.parent = transform;
+
         
         Transform player = this.transform.parent.parent;
 
@@ -29,8 +31,9 @@ public class UnitMovement : MonoBehaviour {
     void Update()
     {
         target = targetGrid[index].transform;
-        float step = speed * Time.deltaTime;
+        
         Debug.Log(target.transform.position);
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
+       
     }
 }
